@@ -96,7 +96,7 @@ def set_background(png_file):
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-set_background(r'C:\Users\usar\Desktop\SSN\PROJECT - VIZ\ezgif.com-webp-to-png.png')
+set_background(r'ezgif.com-webp-to-png.png')
 
 st.subheader("Upload The dataSet here To Know eligible for Credit Card")
 data_file = st.file_uploader("Upload CSV",type=["csv"])
