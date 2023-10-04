@@ -78,25 +78,7 @@ st.download_button('Download file',data=pd.DataFrame.to_csv(df2,index=False), mi
 
 
 
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
 
-
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    body {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
-set_background(r'ezgif.com-webp-to-png.png')
 
 st.subheader("Upload The dataSet here To Know eligible for Credit Card")
 data_file = st.file_uploader("Upload CSV",type=["csv"])
@@ -144,6 +126,7 @@ def set_png_as_page_bg(png_file):
     return
 
 set_png_as_page_bg(r'C:\Users\usar\Desktop\SSN\PROJECT - VIZ\ezgif.com-webp-to-png.png')
+
 # df2=df1[~ df1.isnull().any(axis=1)].head()
 
 # df2.drop(['Ind_ID'],axis=1,inplace=True)
