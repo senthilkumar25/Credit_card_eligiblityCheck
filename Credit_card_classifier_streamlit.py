@@ -91,9 +91,11 @@ if st.button("Classify"):
         id=df["Ind_ID"]
         st.dataframe(df)
         d1=data_preprocesor(df)
-        
-        with open('Credictcard.pkl','rb') as file:
-            cls1=pickle.load(file)
+        try:
+            with open('Credictcard.pkl','rb') as file:
+                cls1=pickle.load(file)
+        except Exception as e:
+            st.write(f"Error loading pickled object: {str(e)}")
         st.dataframe(d1)
         pr1=cls1.predict(d1)
         d2=pd.DataFrame({"Ind_ID":list(id),"Predicted labels":pr1})
